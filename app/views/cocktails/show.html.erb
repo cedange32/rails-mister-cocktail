@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1><%= @cocktail.name %></h1>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
       <ul>
         <% @cocktail.doses.each do |dose| %>
           <li>
@@ -12,6 +13,7 @@
         <% end %>
       </ul>
 
+
       <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.input :description %>
         <%= f.association :ingredient %>
@@ -20,7 +22,7 @@
 
       <%= link_to "back to cocktails list", cocktails_path %>
 
-      <%= cl_image_tag("siojtgw8dltekzzbnwg4", width: 400, height: 300, crop: :fill) %>
+
 
     </div>
   </div>
