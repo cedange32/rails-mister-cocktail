@@ -1,0 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 211, 57,0.4) 0%, rgba(255, 82, 65,0.3) 50%), url('https://images.unsplash.com/photo-1509157774525-cd6d6cbf00a7?auto=format&fit=crop&w=1050&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');">
+  <div class="banner-content">
+    <h1>The pompette recipes</h1>
+    <p>Let's get drunk</p>
+    <%= link_to "add a cocktail", new_cocktail_path, class: "btn btn-warning btn-lg"%>
+  </div>
+</div>
+
+<p></p>
+<p></p>
+<div class="container">
+  <!-- insert <div class="card"> -->
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('assets/card.jpeg');">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to'',cocktail_path(cocktail), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+
+
+  </div>
+</div>
+
